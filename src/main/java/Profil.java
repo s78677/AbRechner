@@ -2,23 +2,21 @@ package main.java;
 import java.awt.*;
 
 public class Profil{
-    //private Nutzer nutzer;
-    private Admin admin;
+    private Nutzer nutzer;
     private Listenansicht listenansicht;
     private String name;
     private Image profilbild;
 
     public Profil(Nutzer nutzer){
-        //this.nutzer = nutzer;
-        this.admin = admin;
+        this.nutzer = nutzer;
         this.name = nutzer.getName();
         listenansicht = new Listenansicht(nutzer);
     }
     public Liste createListe(String name){ //Der Benutzer soll die Liste nur vom Profil aus erstellen können.
         //Liste l = new Liste(nutzer, name);
-        Liste l = new Liste(admin, name);
+        Liste l = new Liste(nutzer, name);
         //nutzer.addListe(l);
-        admin.addListe(l);
+        nutzer.addListe(l);
         listenansicht.updateListen();
         listenansicht.addSumme(l);
         return l;

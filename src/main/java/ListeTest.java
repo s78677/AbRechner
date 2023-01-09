@@ -6,9 +6,9 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class ListeTest {
-    private final Nutzer nutzer1 = new Admin("max-muster@gmail.com", "maxmuster96", "12345678");
-    private final Nutzer nutzer2 = new Admin("tommy-test@gmail.com", "tommyt", "testtest");
-    private final Nutzer nutzer3 = new Admin("lisa-liste@gmail.com", "lisa2508", "hallo");
+    private final Nutzer nutzer1 = new Nutzer("max-muster@gmail.com", "maxmuster96", "12345678");
+    private final Nutzer nutzer2 = new Nutzer("tommy-test@gmail.com", "tommyt", "testtest");
+    private final Nutzer nutzer3 = new Nutzer("lisa-liste@gmail.com", "lisa2508", "hallo");
     private final Liste liste1 = new Liste(nutzer2, "WG-Kasse Dezember");
 
     public ListeTest() throws Exception {
@@ -20,7 +20,7 @@ public class ListeTest {
         liste1.addNutzer(nutzer3);
         System.out.println("Es haben "+ liste1.getAnzahlZugriffe() + " Nutzer Zugriff auf diese Liste.");
         try{
-            Nutzer nutzer4 = new Admin("nutzer-test@mail.de", "", "");
+            Nutzer nutzer4 = new Nutzer("nutzer-test@mail.de", "", "");
         }
         catch(Exception e){
             System.out.println(e);
