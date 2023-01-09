@@ -4,7 +4,6 @@ public class Abrechnung {
     private String text;
     private Nutzer sender;
     private Nutzer empfaenger;
-    private int summe;
     private Liste liste;
     private String email;
     private String betreff;
@@ -21,12 +20,6 @@ public class Abrechnung {
             }
         }
     }
-    /*public void senden(Nutzer empfaenger){
-        betreff = "Abrechnung von " + sender.getName();
-        summe = liste.getSumme(empfaenger);
-        text = "Sie haben eine Abrechnung von " + sender.getName() + " erhalten.\nAusstehender Betrag: " + summe;
-        email = empfaenger.getEmail();
-    }*/
     public void senden(Nutzer empfaenger){
         betreff = "Abrechnung von " + sender.getName();
         text = "Sie haben eine Abrechnung von " + sender.getName() + " erhalten.\nAusstehender Betrag: " + liste.getSumme(empfaenger);
